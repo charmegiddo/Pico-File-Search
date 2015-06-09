@@ -10,7 +10,7 @@
  * how to use:
  * 1: You will save this plugin to plugin's folder
  * 2: You will add to somewhere (e.g. top page) the following code.
- *   <form action="./picosearch" method="get">
+ *   <form action="./filesearch" method="get">
  *   <p>
  *   Keyword: <input type="text" name="q">
  *   </p>
@@ -20,7 +20,7 @@
  *   </form>
  */
 
-class Pico_Search {
+class Pico_FileSearch {
   private $is_search;
   private $base_url;
   private $content_dir;
@@ -33,7 +33,7 @@ class Pico_Search {
 
   public function request_url(&$url)
   {
-    if($url == 'picosearch') $this->is_search = true;
+    if($url == 'filesearch') $this->is_search = true;
   }
 
   public function config_loaded(&$settings) {
@@ -76,7 +76,7 @@ class Pico_Search {
       header($_SERVER['SERVER_PROTOCOL'].' 200 OK');
       $loader = new Twig_Loader_Filesystem($this->plugin_path);
       $twig_editor = new Twig_Environment($loader, $twig_vars);
-      echo $twig_editor->render('pico_search_result.html', $twig_vars);
+      echo $twig_editor->render('pico_file_search_result.html', $twig_vars);
       exit;
     }
   }

@@ -10,7 +10,7 @@ https://www.youtube.com/watch?v=2vtft7XnUQY
  
 2: You will add to somewhere (e.g. top page) the following code.
 
-    <form action="./picosearch" method="get">
+    <form action="./filesearch" method="get">
     <p>
     Keyword: <input type="text" name="q">
     </p>
