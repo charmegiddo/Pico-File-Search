@@ -20,7 +20,7 @@
  *   </form>
  */
 
-class Pico_FileSearch {
+class Pico_Fsearch {
   private $is_search;
   private $base_url;
   private $content_dir;
@@ -76,7 +76,7 @@ class Pico_FileSearch {
       header($_SERVER['SERVER_PROTOCOL'].' 200 OK');
       $loader = new Twig_Loader_Filesystem($this->plugin_path);
       $twig_editor = new Twig_Environment($loader, $twig_vars);
-      echo $twig_editor->render('pico_file_search_result.html', $twig_vars);
+      echo $twig_editor->render('pico_fsearch_result.html', $twig_vars);
       exit;
     }
   }
